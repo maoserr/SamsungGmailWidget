@@ -1,0 +1,92 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	color: white;
+	background: transparent url("../images/bg.png") no-repeat fixed 0px 0px;
+}
+
+#inputbox{
+	display:none;
+}
+
+.input{
+	color: white;
+	background: black;
+	border: 1px solid;
+}
+#initial_setup {
+	margin: 2px;
+}
+#setup_content{
+	position:relative;
+	left:10px;
+	top:25px;
+}
+/* Article List */
+#list {
+	display: none;
+	padding: 3px;
+}
+
+/* List content within article list */
+#itemList {
+	list-style: none;
+	padding: 0;
+	
+	overflow: hidden;
+}
+	
+/* An individual item */
+#item {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-family: Verdana, Arial, sans-serif;
+}
+
+hr {
+	margin: 1px 0px 0px 0px;
+}
+
+/* Feed title within article list */
+#title {
+	text-align: center;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-family: Arial;
+}
+
+/* Article viewer */
+#viewer {
+	display: none;
+	padding: 3px;
+}
+	
+/* Article content within article viewer */
+#content {
+	position:relative;
+	top: 30px;
+	font-size: 12px;
+	font-family: Verdana, Arial, sans-serif;
+	overflow: hidden;
+}
+
+/* Back button in article viewer */
+#back {
+	position:absolute;
+	left: 5px;
+	top: 2px;
+	width: 31px;
+	height: 25px;
+}
+
+/* Open button in article viewer */
+#open {
+	position:absolute;
+	right: 24px;
+	top: 4px;
+	width: 20px;
+	height: 19px;
+}

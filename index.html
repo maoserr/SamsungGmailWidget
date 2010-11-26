@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>rssTemplate</title>
+		<link href="css/styles.css" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/network.js"></script>
+		<script type="text/javascript" src="js/utility.js"></script>
+	</head>
+	<body id="body" onload="appInit()">
+		<div id="inputbox">
+			
+		</div>
+		<div id="list">
+			<h1 id="title">Retrieving emails...</h1>
+			<ul id="itemList" />
+		</div>
+		<div id="viewer">
+			<img id="back" src="images/back.png" onclick="showList();"></img>
+			<img id="open" src="images/plus.png" onclick="openStoryURL();"></img>
+			<p id="content">This is the story text.</p>
+		</div>
+		<div id="initial_setup">
+			<h1 id="title">Setup</h1>
+			<div id="setup_content">
+				<form id="acctform"><table>
+					<tr><td>User</td>
+						<td><input class="input" type="text" size="6" id="user" name="user" value="" /></td></tr>
+					<tr><td>Password</td>
+						<td><input class="input" size="6" type="text" id="pw" name="pw" value="" /></td></tr>
+					<tr><td>Update</td>
+						<td><input class="input" type="text" size="3" id="interval" name="interval" value="60" /> min</td></tr>
+					<tr><td>Save pw</td>
+						<td><input type="checkbox" id="savepw" name="savepw" /></td></tr>
+					<tr><td></td>
+						<td><input class="button" type="button" onclick="savePrefs()" value="Start" /></td></tr>
+				</table></form>
+			<div id="status"></div>
+			</div>
+		</div>
+	</body>
+</html>
