@@ -1,13 +1,3 @@
-/**
- * resizeWindow - resize the current widget window 
- * SHP provides a widget.window.resizeWindow, but WM does not, 
- * so we attempt to do a resizeWindow and fall back to resizeTo.
- * 
- * @param width
- *            desired width of window
- * @param height
- *            desired height of window
- */
 function resizeWindow(width, height) {
 	try {
 		widget.window.resizeWindow(width, height);
@@ -17,45 +7,40 @@ function resizeWindow(width, height) {
 	}
 }
 
-/**
- * resizeWindow to fit the specified element
- * This function uses style information from the element so that
- * we don't hard code sizes in our JavaScript files.
- * @param id
- *            the id of main element
- */
 function resizeWindowToFit(id) {
 	var container = document.getElementById(id);
 	resizeWindow(container.offsetWidth, container.offsetHeight);
 }
 
-/**
- * Show a document element
- * 
- * @param id
- *            the id of the element to show
- */
 function show(id) {
 	document.getElementById(id).style.display = "block";
 }
 
-/**
- * Hide a document element
- * 
- * @param id
- *            of the element to hide
- */
 function hide(id) {
 	document.getElementById(id).style.display = "none";
 }
 
-/**
- * Open the specified url Attempt to use widget.openURL, 
- * but fall back to using window.open
- * 
- * @param url
- *            the URL to open
- */
+function switchWin(id){
+	var wins = ['list','viewer','settings','add_acct'];
+	for( var i in wins ){
+		if( id != wins[i] )
+			hide(wins[i]);
+	}
+	show(id);
+}
+
+function scroll(win,dir){
+	var step = 5;
+	switch(dir){
+	case 'up':
+		document.getElementById(win).scrollTop-=step;
+		break;
+	case 'down':
+		document.getElementById(win).scrollTop+=step;
+		break;
+	}
+}
+
 function openURL(url) {
 	try {
 		widget.openURL(url);
@@ -65,9 +50,6 @@ function openURL(url) {
 	}
 }
 
-/**
- * @return true if network is available (using getIsNetworkAvailable)
- */
 function isNetworkAvailable() {
 	try {
 		return widget.sysInfo.network.getIsNetworkAvailable();
@@ -76,3 +58,15 @@ function isNetworkAvailable() {
 		return true;
 	}
 }
+
+function getXMLHttpRequest() {
+	var xmlHttp = null;
+	try {
+		xmlHttp = new XMLHttpRequest();
+	}catch (e) {
+		try {xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");}
+		catch (e) {}
+	}
+	return xmlHttp;
+}
+

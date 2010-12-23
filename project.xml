@@ -3,7 +3,7 @@
     <description>Gmail widget</description>
     <version>1.0</version>
     <width>150</width>
-    <height>200</height>
+    <height>250</height>
     <icon>icon.png</icon>
     <main>index.html</main>
     <network>true</network>

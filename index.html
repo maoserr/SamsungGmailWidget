@@ -1,42 +1,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-	<head>
-		<title>rssTemplate</title>
-		<link href="css/styles.css" type="text/css" rel="stylesheet" />
-		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript" src="js/network.js"></script>
-		<script type="text/javascript" src="js/utility.js"></script>
-	</head>
-	<body id="body" onload="appInit()">
-		<div id="inputbox">
-			
-		</div>
+<head>
+	<title>rssTemplate</title>
+	<link href="css/styles.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/utility.js"></script>
+	<script type="text/javascript" src="js/accounts.js"></script>
+</head>
+<body id="body" onload="appInit()">
+	<div id="header">
+		<h1 id="title">...</h1>
+	</div>
+	<img src="images/arrow_up.png" onclick="scroll('content','up')" />
+	<img src="images/arrow_down.png" onclick="scroll('content','down')" />
+	<div id="content">
 		<div id="list">
-			<h1 id="title">Retrieving emails...</h1>
 			<ul id="itemList" />
 		</div>
 		<div id="viewer">
 			<img id="back" src="images/back.png" onclick="showList();"></img>
 			<img id="open" src="images/plus.png" onclick="openStoryURL();"></img>
-			<p id="content">This is the story text.</p>
+			<p id="summary">This is the story text.</p>
 		</div>
-		<div id="initial_setup">
-			<h1 id="title">Setup</h1>
-			<div id="setup_content">
-				<form id="acctform"><table>
-					<tr><td>User</td>
-						<td><input class="input" type="text" size="6" id="user" name="user" value="" /></td></tr>
-					<tr><td>Password</td>
-						<td><input class="input" size="6" type="text" id="pw" name="pw" value="" /></td></tr>
-					<tr><td>Update</td>
-						<td><input class="input" type="text" size="3" id="interval" name="interval" value="60" /> min</td></tr>
-					<tr><td>Save pw</td>
-						<td><input type="checkbox" id="savepw" name="savepw" /></td></tr>
-					<tr><td></td>
-						<td><input class="button" type="button" onclick="savePrefs()" value="Start" /></td></tr>
-				</table></form>
-			<div id="status"></div>
-			</div>
+		<div id="settings">
+			<table>
+			<tr><td>Update</td>
+				<td><input class="input" type="text" size="3" id="interval" name="interval" value="60" /> min</td></tr>
+			</table>
+			<h2>Accounts</h2>
+			<div id="settings_accounts"></div>
+			Add <select id="acctype">
+							<option selected="selected" value="gmail">Gmail</option>
+							<option value="reader">Reader</option>
+				</select>
+			<img class="button" src="images/add.png" onclick="switchWin('add_acct');" />
+				<img class="button" src="images/accept.png" onclick="saveSettings();" />
 		</div>
-	</body>
+		<div id="add_acct">
+			<form id="acctform"><table>
+				<tr><td>Name</td>
+					<td><input class="input" type="text" size="6" id="actname" name="actname" value="Default" /></td></tr>
+				<tr><td>User</td>
+					<td><input class="input" type="text" size="6" id="user" name="user" value="" /></td></tr>
+				<tr><td>Password</td>
+					<td><input class="input" size="6" type="text" id="pw" name="pw" value="" /></td></tr>
+				<tr><td>Label</td>
+					<td><input class="input" type="text" size="6" id="label" name="label" value="inbox" /></td></tr>
+				<tr><td>Save pw</td>
+					<td><input type="checkbox" id="savepw" name="savepw" /></td></tr>
+				<tr><td><img class="button" src="images/cancel.png" onclick="cancelAcct();" /></td>
+					<td><img class="button" src="images/accept.png" onclick="saveAcct('mail');" /></td></tr>
+			</table></form>
+		</div>
+	</div>
+	<div id="footer">
+	</div>
+</body>
 </html>

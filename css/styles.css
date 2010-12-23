@@ -4,41 +4,69 @@
 }
 body {
 	color: white;
-	background: transparent url("../images/bg.png") no-repeat fixed 0px 0px;
 }
-
-#inputbox{
-	display:none;
+h1 {
+	text-align: center;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-family: Arial;
 }
-
+h2 {
+	text-align: center;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-family: Arial;	
+}
+hr {
+	margin: 1px 0px 0px 0px;
+}
 .input{
 	color: white;
 	background: black;
 	border: 1px solid;
 }
-#initial_setup {
-	margin: 2px;
+.button{
+	margin-left: 30px;
+	margin-top: 5px;
 }
-#setup_content{
-	position:relative;
-	left:10px;
-	top:25px;
+.acct_marker{
+	margin-left: 10px;
+	margin-right: 5px;	
 }
-/* Article List */
-#list {
-	display: none;
-	padding: 3px;
+#header{
+	background: transparent url("../images/bg_top.png") no-repeat 0px 0px;
+	padding: 2px 2px 0px 2px;
+	width: 150px;
+	height: 20px;
+	overflow:hidden;
 }
 
-/* List content within article list */
+#content{
+	background: transparent url("../images/bg_strip.png") repeat-y 0px 0px;
+	padding: 0px 2px 0px 2px;
+	width: 150px;
+	max-height: 170px;
+	overflow:hidden;
+}
+#footer{
+	background: transparent url("../images/bg_bottom.png") no-repeat 0px 0px;
+	width: 150px;
+	height: 17px;
+	padding: 0px 2px 2px 2px;
+	overflow:hidden;
+}
+
+#list {
+	display: none;
+	padding: 1px 3px 0px 3px;
+}
+
 #itemList {
 	list-style: none;
-	padding: 0;
-	
+	padding: 0;	
 	overflow: hidden;
 }
-	
-/* An individual item */
+
 #item {
 	margin: 0;
 	padding: 0;
@@ -46,33 +74,18 @@ body {
 	font-family: Verdana, Arial, sans-serif;
 }
 
-hr {
-	margin: 1px 0px 0px 0px;
-}
-
-/* Feed title within article list */
-#title {
-	text-align: center;
-	font-size: 16px;
-	color: #FFFFFF;
-	font-family: Arial;
-}
-
-/* Article viewer */
 #viewer {
 	display: none;
 	padding: 3px;
 }
-	
-/* Article content within article viewer */
-#content {
+
+#summary {
 	position:relative;
 	top: 30px;
 	font-size: 12px;
 	font-family: Verdana, Arial, sans-serif;
 	overflow: hidden;
 }
-
 /* Back button in article viewer */
 #back {
 	position:absolute;
@@ -81,7 +94,6 @@ hr {
 	width: 31px;
 	height: 25px;
 }
-
 /* Open button in article viewer */
 #open {
 	position:absolute;
@@ -89,4 +101,12 @@ hr {
 	top: 4px;
 	width: 20px;
 	height: 19px;
+}
+
+#settings{
+
+}
+
+#add_acct {
+	display: none;
 }
